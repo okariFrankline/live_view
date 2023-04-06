@@ -1,0 +1,24 @@
+<div>
+  <.header>
+    <div class="flex justify-between">
+      <span>
+        Guessing game ( <%= @actual_number %> )
+      </span>
+
+      <span class="text-green-500 text-sm">Points: <%= @points %></span>
+    </div>
+
+    <:subtitle>
+      Enter a number between 1 and 9
+    </:subtitle>
+  </.header>
+
+  <.simple_form for={@form} id="guess-form" phx-change="validate" phx-submit="check_guess">
+    <%!-- Input for number --%>
+    <.input field={@form[:number]} label="Your guess" />
+
+    <:actions>
+      <.button class="w-full">Submit</.button>
+    </:actions>
+  </.simple_form>
+</div>

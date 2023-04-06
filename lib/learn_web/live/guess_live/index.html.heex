@@ -1,0 +1,16 @@
+<%!-- Display guess form --%>
+<.guess_form form={@form} actual_number={@actual_number} points={@score} />
+
+<%!-- Display the retry modal --%>
+<.retry_modal
+  :if={@live_action == :retry}
+  retries={@trials}
+  message={@message}
+  guessed_number={@guessed}
+/>
+
+<%!-- Display the correct modal --%>
+<.correct_modal :if={@live_action == :correct} guessed_number={@guess.number} points={@score} />
+
+<%!-- Display the game over modal --%>
+<.game_over_modal :if={@live_action == :game_over} points={@score} />

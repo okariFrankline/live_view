@@ -1,0 +1,17 @@
+<.modal id="game-over-modal" show on_cancel={JS.patch(~p"/guess")}>
+  <div class="flex flex-col items-left p-5 space-y-5 max-w-md mx-auto">
+    <.header>
+      Game over
+      <:subtitle>
+        <p>Points earned: <%= @points %></p>
+      </:subtitle>
+    </.header>
+
+    <.button
+      class="w-full"
+      phx-click={JS.push("new_game", value: %{reason: "game_over", dom_id: "game-over-modal"})}
+    >
+      New game
+    </.button>
+  </div>
+</.modal>
