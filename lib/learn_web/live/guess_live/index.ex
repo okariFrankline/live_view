@@ -115,8 +115,8 @@ defmodule LearnWeb.GuessLive.Index do
   This is made possible by the fact that the live view can have multiple states at the
   same time, hence, making it easy to display and/or implement the multiple features.
 
-  The way that phoenix liveview makes this possible is throught the user of live navigation
-  using the `patch` option.
+  The way that phoenix liveview makes this possible is through the use of live navigation
+  using the `patch` option and live actions
 
     How does this work
   ----------------------
